@@ -57,4 +57,10 @@ public class UrlShortenerTest {
         assertTrue(errors.isEmpty(), "Concurrent test failures: " + errors);
     }
 
+    @Test
+    void encodeBase62ReturnsLetterWhenRemainderIsTenOrMore(){
+        UrlShortener urlShortener = new UrlShortener();
+        assertEquals("z", urlShortener.encodeBase62(35));
+    }
+
 }
